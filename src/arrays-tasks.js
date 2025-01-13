@@ -346,13 +346,13 @@ function calculateBalance(arr) {
  *    createChunks([10, 20, 30, 40, 50], 1) => [[10], [20], [30], [40], [50]]
  */
 function createChunks(arr, chunkSize) {
-  return arr.reduce((chunks, item, index) => {
+  return arr.reduce((accumulator, item, index) => {
     const chunkIndex = Math.floor(index / chunkSize);
-    if (!chunks[chunkIndex]) {
-      chunks[chunkIndex] = [];
+    if (!accumulator[chunkIndex]) {
+      accumulator[chunkIndex] = [];
     }
-    chunks[chunkIndex].push(item);
-    return chunks;
+    accumulator[chunkIndex].push(item);
+    return accumulator;
   }, []);
 }
 
